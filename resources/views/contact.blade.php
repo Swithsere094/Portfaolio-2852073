@@ -3,6 +3,10 @@
 @section('title','Contact')
 
 @section('content')
+    @if (session('status'))
+        {{ session('status') }}
+    @endif
+
     <h1>@lang('Contact')</h1>
 
     <form action="{{ route('contact.submit') }}" method="POST">
