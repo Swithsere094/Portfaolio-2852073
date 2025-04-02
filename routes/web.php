@@ -16,3 +16,5 @@ Route::post('project/store', [ProjectController::class, 'store'])->name('project
 Route::get('project/edit/{project}', [ProjectController::class, 'edit'])->name('project.edit');
 Route::patch('project/{project}', [ProjectController::class, 'update'])->name('project.update');
 Route::delete('project/{project}', [ProjectController::class, 'destroy'])->name('project.delete');
+
+Auth::routes();
