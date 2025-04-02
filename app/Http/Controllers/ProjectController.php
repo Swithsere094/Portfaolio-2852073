@@ -39,7 +39,7 @@ class ProjectController extends Controller
             'description' => $request['description']
         ]);
 
-        return redirect()->route('project.index');
+        return redirect()->route('project.index')->with('status', 'Proyecto Almacenado Exitosamente');
     }
 
     /**
@@ -69,7 +69,7 @@ class ProjectController extends Controller
             'description' => $request['description']
         ]);
 
-        return redirect()->route('project.show', $project);
+        return redirect()->route('project.show', $project)->with('status', 'Información del proyecto actualizada');
     }
 
     /**
@@ -79,6 +79,6 @@ class ProjectController extends Controller
     {
         $project->delete();
 
-        return redirect()->route('project.index');
+        return redirect()->route('project.index')->with('status', 'Proyecto Eliminado');
     }
 }
