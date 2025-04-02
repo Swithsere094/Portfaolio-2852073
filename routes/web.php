@@ -14,3 +14,5 @@ Route::get('project/create', [ProjectController::class, 'create'])->name('projec
 Route::get('project/{project}', [ProjectController::class, 'show'])->name('project.show');
 Route::post('project/store', [ProjectController::class, 'store'])->name('project.store');
 Route::get('project/edit/{project}', [ProjectController::class, 'edit'])->name('project.edit');
+Route::patch('project/{project}', [ProjectController::class, 'update'])->name('project.update');
+Route::delete('project/{project}', [ProjectController::class, 'destroy'])->name('project.delete');

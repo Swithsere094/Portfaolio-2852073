@@ -12,8 +12,9 @@
         </ul>
     @endif
 
-    <form method="POST" action="{{ route('project.update') }}">
+    <form method="POST" action="{{ route('project.update', $project) }}">
         @csrf {{-- Cross Site Request Forgery --}}
+        @method('PATCH') {{-- Metodo de envío del formulario --}}
         <label for="">Nombre: </label> <br>
         <input name="name" type="text" placeholder="Nombre del proyecto" value="{{ old('name', $project['name']) }}"> <br>
         <label for="">Url: </label> <br>

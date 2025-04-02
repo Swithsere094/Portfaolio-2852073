@@ -61,16 +61,24 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(ProjectRequest $request, Project $project)
     {
-        //
+        $project->update([
+            'name' => $request['name'],
+            'url' => $request['url'],
+            'description' => $request['description']
+        ]);
+
+        return redirect()->route('project.show', $project);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Project $project)
     {
-        //
+        $project->delete();
+
+        return redirect()->route('project.index');
     }
 }
