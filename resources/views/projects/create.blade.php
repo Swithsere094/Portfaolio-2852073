@@ -4,13 +4,8 @@
 
 @section('content')
     <h1>Nuevo Proyecto</h1>
-    @if ($errors->any())
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    @endif
+
+    @include("partials.errors")
 
     <form method="POST" action="{{ route('project.store') }}">
         @csrf {{-- Cross Site Request Forgery --}}

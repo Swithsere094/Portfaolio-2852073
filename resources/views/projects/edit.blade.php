@@ -4,13 +4,7 @@
 
 @section('content')
     <h1>Actualizar Proyecto | {{ $project['name'] }}</h1>
-    @if ($errors->any())
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    @endif
+    @include("partials.errors")
 
     <form method="POST" action="{{ route('project.update', $project) }}">
         @csrf {{-- Cross Site Request Forgery --}}
